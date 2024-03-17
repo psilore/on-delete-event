@@ -1,6 +1,6 @@
 name: Delete Nested workflow
 
-on: delete
+on: push
 
 jobs:
   on-delete:
@@ -8,4 +8,4 @@ jobs:
     with:
       gh-env-name: ${{ github.ref }}
     secrets:
-      token: ${{ secrets.GH_PAT }}
+      token: ${{ secrets.GH_PAT }} # scopes: repo, Full control of private repositories
