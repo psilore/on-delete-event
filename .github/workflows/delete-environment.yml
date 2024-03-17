@@ -24,5 +24,5 @@ jobs:
       - uses: strumwolf/delete-deployment-environment@v3
         with:
           token: ${{ secrets.token }}
-          environment: ${{ inputs.gh-env-name }}
+          environment:  'test-environment'
         continue-on-error: true

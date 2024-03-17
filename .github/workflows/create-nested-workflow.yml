@@ -9,4 +9,4 @@ jobs:
   on-push:
     uses: ./.github/workflows/create-environment.yml
     with:
-      gh-env-name: ${{ github.ref }}
+      gh-env-name: 'test-environment'
