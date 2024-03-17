@@ -6,6 +6,6 @@ jobs:
   on-delete:
     uses: ./.github/workflows/delete-environment.yml
     with:
-      gh-env-name: ${{ github.ref }}
+      gh-env-name: ${{ github.event.ref }}
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
