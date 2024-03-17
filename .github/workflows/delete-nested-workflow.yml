@@ -4,7 +4,7 @@ on: delete
 
 jobs:
   on-delete:
-    uses: ./.github/workflows/delete-environment.yml
+    uses: psilore/on-delete-event/.github/workflows/delete-environment.yml@9048cba85504591a4e8c4d7c2c2389280960447d
     with:
       gh-env-name: ${{ github.ref }}
     secrets:
