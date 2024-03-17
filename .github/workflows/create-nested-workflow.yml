@@ -1,0 +1,12 @@
+name: Create Nested workflow
+
+on: 
+  push:
+    branches:
+      - '!main'
+      - 'feat/*'
+jobs:
+  on-push:
+    uses: ./.github/workflows/create-environment.yml
+    with:
+      gh-env-name: ${{ github.ref }}

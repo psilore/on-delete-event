@@ -1,0 +1,19 @@
+name: Create environment
+
+on: 
+  workflow_call:
+    inputs:
+      gh-env-name:
+        description: 'The name of the environment to delete'
+        type: string
+        required: true
+
+jobs:
+  create-environment:
+    environment:
+      name: ${{ inputs.gh-env-name }}
+    name: Create github Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
