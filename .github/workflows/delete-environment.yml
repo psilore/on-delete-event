@@ -1,0 +1,28 @@
+name: Delete Github Environment
+
+on: 
+  workflow_call:
+    inputs:
+      gh-env-name:
+        description: 'The name of the environment to delete'
+        type: string
+        required: true
+
+    secrets:
+      token:
+        description: 'The Github token to use'
+        required: true
+
+jobs:
+  delete-github-environment:
+    name: Delete Github Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - uses: strumwolf/delete-deployment-environment@v3
+        with:
+          token: ${{ secrets.token }}
+          environment: ${{ inputs.gh-env-name }}
+        continue-on-error: true
