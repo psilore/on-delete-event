@@ -1,6 +1,6 @@
 name: Delete Nested workflow
 
-on: delete
+on: push
 
 jobs:
   on-delete:
